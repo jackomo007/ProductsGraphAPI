@@ -1,8 +1,8 @@
 const fs = require("fs");
 
-const getFavorites = async () => {
+const getProductsCart = async () => {
   const result = await new Promise((resolve, reject) => {
-    fs.readFile("./favorites.json", "utf8", (error, data) => {
+    fs.readFile("./cart.json", "utf8", (error, data) => {
       if (error) {
         reject(error);
       } else {
@@ -10,14 +10,14 @@ const getFavorites = async () => {
       }
     });
   });
-  return JSON.parse(result).favorites;
+  return JSON.parse(result).shoppingCart;
 };
 
-const setFavorites = async (favorites) => {
+const addToCart = async (shoppingCart) => {
   await new Promise((resolve, reject) => {
     fs.writeFile(
-      "./favorites.json",
-      JSON.stringify({ favorites }, null, 2),
+      "./cart.json",
+      JSON.stringify({ shoppingCart }, null, 2),
       (error) => {
         if (error) {
           reject(error);
@@ -30,6 +30,6 @@ const setFavorites = async (favorites) => {
 };
 
 module.exports = {
-  getFavorites,
-  setFavorites,
+  getProductsCart,
+  addToCart,
 };

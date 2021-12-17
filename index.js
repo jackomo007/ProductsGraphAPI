@@ -3,6 +3,7 @@ const { ApolloServer, gql } = require("apollo-server-micro");
 const { send } = require("micro");
 const { nanoid } = require("nanoid");
 const { getFavorites, setFavorites } = require("./favorites");
+const { getProductsCart, addToCart } = require("./shoppingCart");
 
 const wait = (numMs) => new Promise((res) => setTimeout(() => res(), numMs));
 
@@ -63,8 +64,15 @@ const typeDefs = gql`
     description: String
     price: String!
     favoriteId: ID
+    shoppingCartId: ID
   }
+  
   type Favorite {
+    id: ID!
+    product: Product!
+  }
+
+  type ShoppingCart {
     id: ID!
     product: Product!
   }
@@ -73,11 +81,14 @@ const typeDefs = gql`
     products: [Product!]
     product(id: ID!): Product
     favorites: [Favorite!]
+    shoppingCart: [ShoppingCart!]
   }
 
   type Mutation {
     addFavorite(productId: ID!): Favorite
     removeFavorite(favoriteId: ID!): Boolean
+    removeFromCart(shoppingCartId: ID!): Boolean
+    addToCart(productId: ID!): ShoppingCart
   }
 `;
 
@@ -87,6 +98,11 @@ const resolvers = {
       const favorites = await getFavorites();
       const favorite = favorites.find((b) => b.product.id === parent.id);
       return favorite ? favorite.id : null;
+    },
+    shoppingCartId: async (parent) => {
+      const cartProducts = await getFavorites();
+      const cartProduct = cartProducts.find((b) => b.product.id === parent.id);
+      return cartProduct ? cartProduct.id : null;
     },
   },
   Query: {
@@ -98,6 +114,11 @@ const resolvers = {
       await wait(1000);
       const favorites = await getFavorites();
       return favorites;
+    },
+    async shoppingCart() {
+      await wait(1000);
+      const cartProducts = await getProductsCart();
+      return cartProducts;
     },
     async product(parent, args) {
       await wait(1000);
@@ -134,6 +155,39 @@ const resolvers = {
           (b) => b.id !== args.favoriteId
         );
         setFavorites(newFavorites);
+        return true;
+      }
+
+      return false;
+    },
+    async addToCart(parent, args) {
+      await wait(1000);
+      const productsCart = await getProductsCart();
+      if (!productsCart.find((productCart) => productCart.product.id === args.productId)) {
+        const productToAdd = products.find(
+          (product) => product.id === args.productId
+        );
+        if (productToAdd) {
+          const productCart = { id: nanoid(), product: productToAdd };
+          addToCart([...productsCart, productCart]);
+          return productCart;
+        }
+      }
+      return null;
+    },
+    async removeFromCart(parent, args) {
+      await wait(1000);
+      const productsCart = await getProductsCart();
+      const productToRemove = productsCart.find(
+        (product) => product.id === args.shoppingCartId
+      );
+
+      if (productToRemove) {
+        const productsCart = await getProductsCart();
+        const newProducts = productsCart.filter(
+          (b) => b.id !== args.shoppingCartId
+        );
+        addToCart(newProducts);
         return true;
       }
 
