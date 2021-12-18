@@ -1,14 +1,3 @@
 {
-  "shoppingCart": [
-    {
-      "id": "56Df8nd-z2k0AtaotIHTX",
-      "product": {
-        "id": "1n4n7KZYT3MDjkXYmvtEL",
-        "name": "5.11 STRYKE® PANT",
-        "image": "https://www.511tactical.com/media/catalog/product/74369/055/74369_055_01v4.jpg?quality=100&bg-color=255,255,255&fit=bounds&height=300&width=300",
-        "description": "The 5.11 Stryke® Pant is what all other pants want to be. Made of our patent-pending two-way Flex-Tac® mechanical stretch fabric, finished with stain- and soil-resistant Teflon®, the 5.11 Stryke® pant is exceptionally durable.",
-        "price": "$80.00"
-      }
-    }
-  ]
+  "shoppingCart": []
 }

@@ -100,7 +100,7 @@ const resolvers = {
       return favorite ? favorite.id : null;
     },
     shoppingCartId: async (parent) => {
-      const cartProducts = await getFavorites();
+      const cartProducts = await getProductsCart();
       const cartProduct = cartProducts.find((b) => b.product.id === parent.id);
       return cartProduct ? cartProduct.id : null;
     },
