@@ -1,3 +1,24 @@
 {
-  "favorites": []
+  "favorites": [
+    {
+      "id": "c9fNUqiaX7yzT9FaiKkI4",
+      "product": {
+        "id": "y7nqO9KWVH6SfQ6RMlPKg",
+        "name": "AMP12™ BACKPACK 25L",
+        "image": "https://www.511tactical.com/media/catalog/product/5/6/56392_014_01_v3.jpg?quality=100&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "description": "Set your course and move out - the AMP12™ backpack is built for durability, flexibility and comfort. Compact and efficient, it features 5.11's innovative HEXGRID® load bearing system, which offers unprecedented options for mounting or attaching gear.",
+        "price": "$150.00"
+      }
+    },
+    {
+      "id": "nNuH7hqeG1guzXXPo5enn",
+      "product": {
+        "id": "4KymTYhBFLzIOO_4aXhgf",
+        "name": "HIGH ABRASION TAC GLOVE",
+        "image": "https://www.511tactical.com/media/catalog/product/5/9/59371_186_highabrasiontacglove_01_1_1.jpg?quality=100&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "description": "The 5.11 High Abrasion TAC features a super synthetic suede palm that can handle any formidable task whether it's full on combat or on the construction site.",
+        "price": "$25.00"
+      }
+    }
+  ]
 }

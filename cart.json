@@ -1,3 +1,14 @@
 {
-  "shoppingCart": []
+  "shoppingCart": [
+    {
+      "id": "pvRPqWnUxpAy99PYDwmoe",
+      "product": {
+        "id": "JsjU2i9KcsN8Kwdn6ZOE4",
+        "name": "SIGNATURE DUTY JACKET",
+        "image": "https://www.511tactical.com/media/catalog/product/4/8/48103_019_01v_7.jpg?quality=100&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "description": "With a zip-out quilted liner, a roll-up/removable hood, and waterproof/breathable construction, the Signature Duty Jacket provides complete and modular weather protection ideally suited to a broad range of patrol climates.",
+        "price": "$210.00"
+      }
+    }
+  ]
 }

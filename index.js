@@ -48,11 +48,11 @@ const products = [
     price: "$140.00",
   },
   {
-    id: "6JymTLsCFLzIOO_4aXyc0",
-    name: "SPEED 3.0 WATERPROOF SIDE ZIP BOOT",
-    image: "https://www.511tactical.com/media/catalog/product/12371/019/12371_019_01.jpg?quality=100&bg-color=255,255,255&fit=bounds&height=300&width=300",
-    description: "For the most demanding parts of your job, this boot backs you. The new Speed 3.0 Jungle platform outsole gives you stickier multi-surface traction.",
-    price: "$140.00",
+    id: "4KymTYhBFLzIOO_4aXhgf",
+    name: "HIGH ABRASION TAC GLOVE",
+    image: "https://www.511tactical.com/media/catalog/product/5/9/59371_186_highabrasiontacglove_01_1_1.jpg?quality=100&bg-color=255,255,255&fit=bounds&height=300&width=300",
+    description: "The 5.11 High Abrasion TAC features a super synthetic suede palm that can handle any formidable task whether it's full on combat or on the construction site.",
+    price: "$25.00",
   },
 ];
 
