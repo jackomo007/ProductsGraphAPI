@@ -5,7 +5,7 @@
   "author": "Angel Prieto <jeal.code47@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "micro -l tcp://3.209.172.72:443"
+    "start": "micro"
   },
   "dependencies": {
     "apollo-server": "^3.3.0",
