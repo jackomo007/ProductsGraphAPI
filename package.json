@@ -5,7 +5,7 @@
   "author": "Angel Prieto <jeal.code47@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "micro -l https://prueba-graphql-api.herokuapp.com:$process.env.PORT"
+    "start": "micro -l tcp://prueba-graphql-api.herokuapp.com:${PORT-3000}"
   },
   "dependencies": {
     "apollo-server": "^3.3.0",
